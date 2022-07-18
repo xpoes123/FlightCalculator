@@ -121,7 +121,6 @@ public class FrontEnd {
       bool = scnr.next().trim().toLowerCase();
       if (bool != null
           && (bool.equals("y") || bool.equals("n") || bool.equals("yes") || bool.equals("no"))) {
-        scnr.close();
         return bool.equals("y") || bool.equals("yes");
       } else {
         System.out.println("Sorry, this is not a correct response, please try again!");
