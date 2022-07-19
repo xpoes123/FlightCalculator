@@ -359,10 +359,9 @@ public class Graph {
      *         when these distances are tied
      */
     public int compareTo(PathTime other) {
-      if (Integer.compare(this.totTime, other.totTime) == 0) {
-        return 0;
-      }
-      // use path distance as the natural ordering
+      int cmp = this.totTime - other.totTime;
+      if (cmp != 0)
+        return cmp; // use path distance as the natural ordering
       // when path distances are equal, break ties by comparing the string
       // representation of data in the end vertex of each path
       return this.end.data.toString().compareTo(other.end.data.toString());
